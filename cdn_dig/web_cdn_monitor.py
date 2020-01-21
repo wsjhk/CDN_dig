@@ -32,7 +32,7 @@ for ip in fd:
     c.setopt(pycurl.NOPROGRESS, 1)
     c.setopt(pycurl.DNS_CACHE_TIMEOUT, 30)
     #设置代理
-    c.setopt(pycurl.PROXY, proxy)
+    c.setopt(pycurl.PROXY, proxy.replace("\n", ""))
     indexfile = open(os.path.dirname(os.path.realpath(__file__)) + "/content.txt", "wb")
     c.setopt(pycurl.WRITEHEADER, indexfile)
     c.setopt(pycurl.WRITEDATA, indexfile)
